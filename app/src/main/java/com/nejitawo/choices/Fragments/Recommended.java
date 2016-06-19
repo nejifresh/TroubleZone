@@ -11,10 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.nejitawo.choices.Adapters.ListAdapter;
+import com.nejitawo.choices.DetailsActivity;
 import com.nejitawo.choices.GlobalClass;
 import com.nejitawo.choices.Model.Choices;
 import com.nejitawo.choices.R;
@@ -33,7 +35,7 @@ public class Recommended extends Fragment {
 private ListView choiceList;
     private CircularProgressView progressView;
     List<ParseObject> ob;
-
+LinearLayout lvContent;
     public Recommended() {
         // Required empty public constructor
     }
@@ -44,9 +46,9 @@ private ListView choiceList;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_recommended, container, false);
-        choiceList = (ListView)rootView.findViewById(R.id.mychoiceList);
+        choiceList = (ListView)rootView.findViewById(R.id.recommendedList);
         progressView = (CircularProgressView)rootView. findViewById(R.id.progress_view);
-
+lvContent = (LinearLayout)rootView.findViewById(R.id.visibleContent);
         //Now load data
         new loadData().execute();
 
@@ -76,6 +78,7 @@ private ListView choiceList;
 
             try{
                 ob = query.find();
+
             }catch (Exception ex){
                 ex.printStackTrace();
             }
@@ -84,18 +87,25 @@ private ListView choiceList;
         @Override
         protected void onPostExecute(Void result) {
             List<Choices> myChoice = new ArrayList<Choices>();
-            for (ParseObject driver : ob){
-                try {
-                    Choices t = Choices.giveFullDetails(driver, getActivity().getApplicationContext());
-                    if (t != null) {
-                        myChoice.add(t);
+            if (ob.size()==0){
+                lvContent.setVisibility(View.VISIBLE);
+            }
+
+            for (ParseObject choice : ob) {
+
+                   // lvContent.setVisibility(View.GONE); //Dont show background content
+                    try {
+                        Choices t = Choices.giveFullDetails(choice, getActivity().getApplicationContext());
+                        if (t != null) {
+                            myChoice.add(t);
+                        }
+                        setupListView(myChoice);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        //Log.e("error",e.getMessage().toString());
                     }
-                    setupListView(myChoice);
 
-                } catch(Exception e){
-
-                    Log.e("error",e.getMessage());
-                }
 
 
             }
@@ -109,8 +119,8 @@ private ListView choiceList;
     public void setupListView(final List theChoices)  {
         getActivity().runOnUiThread(new Runnable() {
             public void run() {
-                List<Choices> Stars = theChoices;
-               ListAdapter adapter = new ListAdapter(getActivity().getApplication(), Stars);
+                List<Choices> mChoices = theChoices;
+               ListAdapter adapter = new ListAdapter(getActivity().getApplicationContext(), mChoices);
                 //listView1.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 choiceList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -126,13 +136,16 @@ private ListView choiceList;
                         globalVariable.setDescription(thisChoice.getDescription());
                         globalVariable.setImageURL(thisChoice.getImageURL());
                         globalVariable.setDuration(thisChoice.getDuration());
-                       /**
+                        globalVariable.setMainTitle(thisChoice.getMainTitle());
+                        globalVariable.setSectionA(thisChoice.getSectionA());
+                        globalVariable.setSectionB(thisChoice.getSectionB());
+                        globalVariable.setStatus(thisChoice.getStatus());
+                        globalVariable.setId(thisChoice.getId());
                         Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                        intent.putExtra(DetailsActivity.EXTRA_PARAM_ID, position);
-                        progressView.stopAnimation();
+                         progressView.stopAnimation();
                         progressView.setVisibility(View.INVISIBLE);
                         startActivity(intent);
-                        **/
+
 
 
                     }

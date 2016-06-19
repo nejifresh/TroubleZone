@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/visibleContent"
+        android:visibility="visible"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgSun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:src="@drawable/signpost"
+            android:scaleType="centerCrop" />
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtContent"
+            android:paddingBottom="2dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/welldone"
+            android:layout_gravity="center_horizontal"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp" />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtOtherContent"
+            android:paddingBottom="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/welldonetext"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <RelativeLayout
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnOnceMore"
+            android:textColor="@color/colorPrimary"
+            android:background="@color/off_white"
+            android:text="@string/oncemore"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnShareMood"
+            android:layout_toRightOf="@id/btnOnceMore"
+            android:textColor="@color/off_white"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/sharemood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>

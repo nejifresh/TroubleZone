@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minHeight="340dp"
+    android:orientation="vertical">
+
+
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+      android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop" />
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/txtTitle"
+        android:paddingBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:text="Choice title here"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/txtContent"
+        android:paddingBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:text="Write content here"
+        android:layout_marginLeft="20dp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/txtDuration"
+        android:paddingBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:text="Choice title here"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/very_dark_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnDo"
+      android:textColor="@color/off_white"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/Complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

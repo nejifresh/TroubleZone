@@ -14,6 +14,42 @@ public class Choices {
     private String description;
     private String imageURL;
     private String duration;
+    private String mainTitle;
+    private String sectionA;
+    private String sectionB;
+  private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getSectionA() {
+        return sectionA;
+    }
+
+    public void setSectionA(String sectionA) {
+        this.sectionA = sectionA;
+    }
+
+    public String getSectionB() {
+        return sectionB;
+    }
+
+    public void setSectionB(String sectionB) {
+        this.sectionB = sectionB;
+    }
+
+    public String getMainTitle() {
+        return mainTitle;
+    }
+
+    public void setMainTitle(String mainTitle) {
+        this.mainTitle = mainTitle;
+    }
 
     public String getTitle() {
         return title;
@@ -60,9 +96,15 @@ public class Choices {
         ParseObject docs = revision;
         try{
             t.setTitle((String) docs.get("title"));
+
             t.setDescription((String) docs.get("description"));
             t.setDuration((String) docs.get("duration"));
             t.setImageURL((String) docs.get("imageURL"));
+            t.setMainTitle((String) docs.get("maintitle"));
+            t.setSectionA((String)docs.get("sectionA"));
+            t.setSectionB((String)docs.get("sectionB"));
+            t.setId(docs.getObjectId());
+            t.setStatus((String)docs.get("Status"));
         } catch (Exception e){
             e.printStackTrace();
         }

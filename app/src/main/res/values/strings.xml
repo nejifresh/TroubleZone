@@ -3,9 +3,20 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="letshear">Lets hear from you!</string>
+    <string name="letshearcontent">How did your choice make you feel?</string>
     <string name="action_settings">Settings</string>
-
+    <string name="NotDo">Not For Me</string>
+    <string name="Doit">I Choose To Do This</string>
+    <string name="Complete">Complete</string>
+    <string name="oncemore">Once more</string>
+    <string name="sharemood">Share mood</string>
+    <string name="welldone">Well done!</string>
+    <string name="welldonetext">Organizing things into to-do lists can make the day seem less overwhelming, increasing feelings of productivity and provide a good channel to motivate you towards progress.</string>
+    <string name="awesome">Awesome!</string>
+    <string name="othercontent">You have taken all choices available thats great. We are working on new choices to keep your progress going and they wil be available soon.</string>
+    <string name="timeto">Time to take new choices!</string>
+    <string name="timecontent">Daybreak offers you a collection of choices designed by experts to help you on this journey.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

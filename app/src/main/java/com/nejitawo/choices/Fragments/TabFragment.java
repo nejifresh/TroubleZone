@@ -75,7 +75,7 @@ public class TabFragment extends Fragment {
         public Fragment getItem(int position)
         {
             switch (position){
-                case 0 : return new MyChoices();
+                case 0 : return new ChoiceFragment();
                 case 1 : return new Recommended();
               //  case 2 : return new UpdatesFragment();
             }

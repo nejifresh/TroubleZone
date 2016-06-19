@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+   android:padding="20dp"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/userListItem"
+            android:paddingBottom="2dp"
+            android:text="Choice title here"
+            android:textColor="@color/very_dark_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/txtlastgist"
+            android:layout_marginTop="20dp"
+            android:text="Choice description here.."
+            android:textSize="16sp"
+            android:layout_below="@id/userListItem"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtTiming"
+            android:layout_alignBaseline="@id/userListItem"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="20 mins."
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/userListItem"
+            android:textColor="@color/very_dark_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/ImgMain"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <TextView
+        android:id="@+id/txtfurthgist"
+        android:ellipsize="end"
+        android:layout_marginTop="20dp"
+        android:maxLines="3"
+        android:text="More description here.."
+        android:textSize="16sp"
+        android:layout_below="@id/userListItem"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:padding="20dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnNotDo"
+            android:textColor="@color/colorPrimary"
+            android:background="@color/off_white"
+            android:text="@string/NotDo"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnDo"
+            android:layout_toRightOf="@id/btnNotDo"
+            android:textColor="@color/off_white"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="30dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/Doit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+    </ScrollView>

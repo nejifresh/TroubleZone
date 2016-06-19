@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/placeCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    card_view:cardCornerRadius="@dimen/card_corner_radius"
+    card_view:cardElevation="@dimen/card_elevation">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+         android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignTop="@+id/imgProfile"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:background="@color/translucent"
+        android:layout_height="40dp">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtMainTitle"
+            android:paddingBottom="2dp"
+            android:layout_marginTop="10dp"
+            android:text="Main title here"
+            android:layout_gravity="center_horizontal"
+           android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp" />
+        </LinearLayout>
+</RelativeLayout>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/txtTitle"
+        android:paddingBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:text="Choice title here"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/txtContent"
+        android:paddingBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:text="Write content here"
+        android:layout_marginLeft="20dp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/txtDuration"
+        android:paddingBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:text="Choice title here"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/very_dark_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btnDo"
+        android:textColor="@color/off_white"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/Complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</android.support.v7.widget.CardView>

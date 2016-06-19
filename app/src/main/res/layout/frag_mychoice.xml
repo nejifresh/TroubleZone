@@ -1,19 +1,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.nejitawo.choices.Fragments.Recommended">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    android:id="@+id/linear"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="1dp"
-        tools:context="com.sinch.messagingtutorialskeleton.ListUsersActivity"
-        android:id="@+id/recommendedList">
-    </ListView>
+        android:scrollbars="vertical" />
+</LinearLayout>
     <com.github.rahatarmanahmed.cpv.CircularProgressView
         android:id="@+id/progress_view"
         android:layout_width="40dp"
@@ -36,21 +35,21 @@
             android:id="@+id/txtContent"
             android:paddingBottom="2dp"
             android:layout_marginTop="10dp"
-            android:text="@string/awesome"
-           android:layout_gravity="center_horizontal"
+            android:text="@string/timeto"
+            android:layout_gravity="center_horizontal"
             android:maxLines="3"
             android:ellipsize="end"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp" />
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgSun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:src="@drawable/summer"
+            android:src="@drawable/signpost"
             android:scaleType="centerCrop" />
 
         <TextView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,7 +58,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="@string/othercontent"
+            android:text="@string/timecontent"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/black"
             android:layout_width="wrap_content"

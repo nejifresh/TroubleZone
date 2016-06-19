@@ -2,6 +2,8 @@
 <RelativeLayout android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingLeft="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
     android:layout_marginTop="1dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <de.hdodenhof.circleimageview.CircleImageView
@@ -18,7 +20,7 @@
          android:padding="10dp"
         android:paddingBottom="2dp"
         android:text="Choice title here"
-        android:textColor="@color/black_semi_transparent"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp" />
@@ -26,7 +28,8 @@
         android:id="@+id/txtlastgist"
         android:layout_toRightOf="@id/choice_image"
         android:paddingLeft="10dp"
-
+        android:ellipsize="end"
+        android:maxLines="3"
         android:text="Choice description here.."
         android:layout_below="@id/userListItem"
         android:textColor="@color/very_dark_gray"
