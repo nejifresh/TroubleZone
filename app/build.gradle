@@ -26,4 +26,9 @@ dependencies {
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
     compile 'com.android.support:support-v4:23.4.0'
+    compile 'de.hdodenhof:circleimageview:1.2.+'
+    compile 'com.squareup.picasso:picasso:2.5.0'
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile 'com.parse:parse-android:1.10.3'
+    compile 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
 }

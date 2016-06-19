@@ -33,6 +33,7 @@ public class TabFragment extends Fragment {
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
+
         /**
          *Set an Apater for the View Pager
          */
@@ -48,6 +49,7 @@ public class TabFragment extends Fragment {
             @Override
             public void run() {
                 tabLayout.setupWithViewPager(viewPager);
+                viewPager.setCurrentItem(1);
               //  tabLayout.getTabAt(0).setIcon(tabIcons[0]);
               //  tabLayout.getTabAt(1).setIcon(tabIcons[1]);
             }
