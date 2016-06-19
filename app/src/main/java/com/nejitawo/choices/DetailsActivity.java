@@ -115,6 +115,7 @@ wontDo();
                     for (ParseObject ob: objects){
                         ob.put("Status","REJECTED");
                         ob.deleteInBackground();
+                        //delete this from list of tasks for this user
                     }
                 }
             }
