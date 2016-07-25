@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout"
+        android:orientation="vertical"
+        >
+
+        <!-- TODO: Update blank fragment layout -->
+        <EditText
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/txtLocation"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/loca"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Location"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/ivLocate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/marker" />
+
+            <Spinner
+                android:id="@+id/spmyCountry"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivLocate"
+                android:layout_toRightOf="@id/ivLocate"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <TextView
+                android:id="@+id/txtmyCountry"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivLocate"
+                android:layout_toRightOf="@id/ivLocate"
+                android:text="Lagos, Nigeria"
+
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtcountry"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtmyCountry"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/ivLocate"
+                android:layout_toRightOf="@id/ivLocate"
+                android:text="City"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+            <Button
+                android:id="@+id/btnChangeCountry"
+                android:visibility="visible"
+                android:text="Change "
+                android:clickable="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorAccent"
+                android:background="@color/transparent"
+                android:layout_alignBaseline="@id/txtmyCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/ivContactItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/housecost" />
+
+            <SeekBar
+                android:id="@+id/seekBar1"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivContactItem1"
+                android:layout_toRightOf="@id/ivContactItem1"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="16dp"
+                android:progress="100000"
+                android:max="50000000"/>
+
+            <EditText
+                android:id="@+id/tvNumber1"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/ivContactItem1"
+                android:layout_toRightOf="@id/ivContactItem1"
+                android:text="Lagos, Nigeria"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtprice"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seekBar1"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/ivContactItem1"
+                android:layout_toRightOf="@id/ivContactItem1"
+                android:text="Price range (N)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+            <Button
+                android:id="@+id/btnChange"
+                android:visibility="gone"
+                android:text="Change"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:clickable="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/imgGender"
+                android:src="@drawable/geo"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_alignBaseline="@id/imgGender"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/imgGender"
+                android:layout_toRightOf="@id/imgGender"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spArea"
+
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/imgGender"
+                android:layout_toRightOf="@id/imgGender"
+                android:text="Area/Locality"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:clickable="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/imgAge"
+                android:layout_alignBaseline="@+id/spBeds"
+                android:src="@drawable/beds"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spBeds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/imgAge"
+                android:inputType="phone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spBeds"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/imgAge"
+                android:layout_toRightOf="@id/imgAge"
+                android:text="Number of bedrooms"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/imgNation"
+                android:layout_alignBaseline="@+id/spToilets"
+                android:src="@drawable/toilets"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spToilets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toRightOf="@id/imgNation"
+
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spToilets"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/imgNation"
+                android:layout_toRightOf="@id/imgNation"
+                android:text="Number of toilets"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:elevation="5dp"
+            android:clickable="true"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/statelayout"
+            android:visibility="visible"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/imgState"
+                android:layout_alignBaseline="@+id/spBathrooms"
+                android:src="@drawable/shower"
+                android:layout_height="wrap_content" />
+            <Spinner
+                android:id="@+id/spBathrooms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/imgState"
+                android:layout_toRightOf="@id/imgState"
+                android:inputType="phone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+            <TextView
+                android:id="@+id/lblstate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spBathrooms"
+                android:layout_toEndOf="@id/imgState"
+                android:layout_toRightOf="@id/imgState"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:text="Number of bathrooms"
+
+                android:layout_centerVertical="true"
+                android:textSize="15sp"
+                />
+
+
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/tribeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/imgTribe"
+                android:layout_alignBaseline="@+id/spParlour"
+                android:src="@drawable/parlour"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spParlour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/imgTribe"
+                android:layout_toRightOf="@id/imgTribe"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <TextView
+                android:id="@+id/lbltribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spParlour"
+                android:layout_toEndOf="@id/imgTribe"
+                android:layout_toRightOf="@id/imgTribe"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:text="Number of sitting rooms"
+                android:layout_centerVertical="true"
+                android:textSize="15sp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/religionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/imgreligion"
+                android:layout_alignBaseline="@+id/spKitchen"
+                android:src="@drawable/kitchen"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spKitchen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/imgreligion"
+                android:layout_toRightOf="@id/imgreligion"
+
+                android:inputType="phone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <TextView
+                android:id="@+id/lblreligious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spKitchen"
+                android:layout_toEndOf="@id/imgreligion"
+                android:layout_toRightOf="@id/imgreligion"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:text="Number of kitchens"
+                android:layout_centerVertical="true"
+                android:textSize="15sp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/tenureLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/imgtenure"
+                android:layout_alignBaseline="@+id/spTenure"
+                android:src="@drawable/subscribe"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/spTenure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_toEndOf="@id/imgtenure"
+                android:layout_toRightOf="@id/imgtenure"
+
+                android:inputType="phone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <TextView
+                android:id="@+id/lbltenure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spTenure"
+                android:layout_toEndOf="@id/imgtenure"
+                android:layout_toRightOf="@id/imgtenure"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:text="Number of years required"
+                android:layout_centerVertical="true"
+                android:textSize="15sp"
+                />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnShoot"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="22dp"
+            android:layout_below="@+id/login_user_input"
+            android:text="Search"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:background="@color/colorAccent"/>
+
+    </LinearLayout>
+</ScrollView>

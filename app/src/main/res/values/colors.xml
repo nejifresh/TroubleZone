@@ -2,12 +2,78 @@
 <resources>
     <color name="colorPrimary">#569fd7</color>
     <color name="colorPrimaryDark">#3d82c4</color>
-    <color name="colorAccent">#e45325</color>
+    <color name="colorAccent">#ff0000</color>
+
     <color name="white">#FFFFFF</color>
     <color name="very_dark_gray">#636363</color>
     <color name="dark">#696E79</color>
     <color name="black_semi_transparent">#B2000000</color>
     <color name="black">#000000</color>
     <color name="off_white">#fffafafa</color>
-    <color name="translucent"> #80000000</color>
+    <color name="translucent">#80000000</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="greyish">#fff2f1f2</color>
+    <color name="red">#ff0000</color>
+
+    <color name="ultra_dark">#29303F</color>
+    <color name="ultra_dark_overlay">#0D29303F</color>
+    <color name="dark_gray">#ffb3b3b3</color>
+    <color name="button_null_background_pressed_color">#e4f4ff</color>
+    <color name="white_15_percent">#26ffffff</color>
+    <color name="gray">#9F9F9F</color>
+    <color name="light_white">#66FFFFFF</color>
+    <color name="yellow">#FFDCB059</color>
+    <color name="hint">#9F9F9F</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="app_background">#F2F2F2</color>
+    <color name="dialog_background">#4D000000</color>
+
+    <color name="drawer_blue">#FF1677CB</color>
+    <color name="drawer_black">#FF3A3F4D</color>
+
+    <color name="seek_black">#595A5D</color>
+    <color name="seek_yellow">#DCB059</color>
+
+    <color name="about_blue">#FF1677CB</color>
+    <color name="about_gray">#FFB5B7BD</color>
+    <color name="about_black">#FF444A59</color>
+
+    <color name="remote_user_bg">#3B3E4D</color>
+
+    <color name="notification_old">#99FFFFFF</color>
+    <color name="notification_new">#D9FFFFFF</color>
+
+    <color name="test_black">#6A6F7B</color>
+    <color name="test_gray">#B7B7B7</color>
+    <color name="test_yellow">#DCB059</color>
+
+    <color name="evaluation_black">#FF6A6F7B</color>
+    <color name="evaluation_yellow">#FFDCBA75</color>
+    <color name="evaluation_title">#FFC6C6C6</color>
+    <color name="evaluation_detail">#FF949494</color>
+
+    <color name="overall_text">#FFC9E6FF</color>
+    <color name="main_color_grey_500">@color/material_grey_500</color>
+    <color name="main_color_grey_50">@color/material_grey_50</color>
+    <color name="main_color_grey_100">@color/material_grey_100</color>
+    <color name="main_color_grey_200">@color/material_grey_200</color>
+    <color name="main_color_grey_300">@color/material_grey_300</color>
+    <color name="main_color_grey_400">@color/material_grey_400</color>
+    <color name="main_color_grey_600">@color/material_grey_600</color>
+    <color name="main_color_grey_700">@color/material_grey_700</color>
+    <color name="main_color_grey_800">@color/material_grey_800</color>
+    <color name="main_color_grey_900">@color/material_grey_900</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <!--
+    <color name="colorPrimary">@color/material_blue_800</color>
+    <color name="colorPrimaryDark">@color/material_blue_900</color>
+    <color name="colorAccent">@color/material_orange_700</color>
+
+     <color name="colorPrimary">#569fd7</color>
+    <color name="colorPrimaryDark">#3d82c4</color>
+      <color name="colorAccent">#e45325</color>
+    -->
 </resources>

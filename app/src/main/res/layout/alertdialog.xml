@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlRobbery"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender"
+            android:src="@drawable/robbery"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender"
+            android:text="Armed Robbery"
+            android:layout_toRightOf="@id/imgGender"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea"
+android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender"
+            android:layout_toRightOf="@id/imgGender"
+            android:text="Select if there a robbery around you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:id="@+id/rlFire"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender2"
+            android:src="@drawable/explosion"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage2"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender2"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender2"
+            android:text="Fire Incident"
+            android:layout_toRightOf="@id/imgGender2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender2"
+            android:layout_toRightOf="@id/imgGender2"
+            android:text="Select if there is a fire around you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:id="@+id/rlRoad"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender3"
+            android:src="@drawable/accidentcar"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage3"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender3"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender3"
+            android:text="Road Accident"
+            android:layout_toRightOf="@id/imgGender3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender3"
+            android:layout_toRightOf="@id/imgGender3"
+            android:text="Select if there is a road accident near you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/rlKidnap"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender4"
+            android:src="@drawable/kidnap"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage4"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender4"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender4"
+            android:text="Kidnapping"
+            android:layout_toRightOf="@id/imgGender4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea4"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender4"
+            android:layout_toRightOf="@id/imgGender4"
+            android:text="Select if there is a ongoing kidnapping near you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:id="@+id/rlMedical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender5"
+            android:src="@drawable/ambulance"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage5"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender5"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender5"
+            android:text="Medical Emergency"
+            android:layout_toRightOf="@id/imgGender5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea5"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender5"
+            android:layout_toRightOf="@id/imgGender5"
+            android:text="Select for medical emergency near you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:id="@+id/rlDomestic"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender6"
+            android:src="@drawable/domestic"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage6"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender6"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender6"
+            android:text="Domestic Vio.."
+
+            android:layout_toRightOf="@id/imgGender6"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea6"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender6"
+            android:layout_toRightOf="@id/imgGender6"
+            android:text="Select for domestic violence near you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:id="@+id/rlSexual"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender7"
+            android:src="@drawable/harrass"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage7"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender7"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender7"
+            android:text="Sexual Harrassment"
+            android:layout_toRightOf="@id/imgGender7"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea7"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender7"
+            android:layout_toRightOf="@id/imgGender7"
+            android:text="Select for sexual harrassment around you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+    </ScrollView>

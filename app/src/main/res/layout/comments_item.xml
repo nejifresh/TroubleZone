@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
+    android:layout_marginTop="1dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/choice_image"
+        android:layout_width="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="36dp"
+        android:src="@mipmap/ic_launcher"
+       />
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/userListItem"
+        android:layout_toRightOf="@id/choice_image"
+         android:paddingLeft="10dp"
+        android:paddingBottom="5dp"
+
+        android:paddingTop="5dp"
+        android:text="Choice title here"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/txtlastgist"
+        android:layout_toRightOf="@id/choice_image"
+        android:paddingLeft="10dp"
+        android:textSize="12sp"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:text="Choice description here.."
+        android:layout_below="@id/userListItem"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtTiming"
+        android:text="20 mins."
+        android:layout_marginTop="7dp"
+        android:paddingLeft="10dp"
+        android:textSize="10sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_below="@id/txtlastgist"
+        android:textColor="@color/test_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:rotation="270"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+    android:src="@drawable/arrowboy"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="false"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:visibility="gone"
+        android:background="@color/black_semi_transparent"/>
+
+</RelativeLayout>

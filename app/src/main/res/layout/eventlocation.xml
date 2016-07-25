@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Where is this incident happening?"
+        android:textSize="15sp"
+         />
+
+    <Button
+        android:id="@+id/btnHomeZone"
+        android:text="My Home Zone"
+        android:drawableLeft="@drawable/house"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+        <requestFocus />
+
+    </Button>
+
+    <Button
+        android:id="@+id/btnCurrentLocation"
+        android:text="My Current Location"
+        android:layout_width="wrap_content"
+        android:drawableLeft="@drawable/geo"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+        <requestFocus />
+
+    </Button>
+</LinearLayout>

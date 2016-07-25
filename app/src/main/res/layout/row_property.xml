@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/placeCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    card_view:cardCornerRadius="@dimen/card_corner_radius"
+    card_view:cardElevation="@dimen/card_elevation">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+         android:src="@drawable/njoo"
+        android:scaleType="centerCrop" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignBottom="@+id/imgProfile"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:background="@color/translucent"
+        android:layout_height="40dp">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtMainTitle"
+            android:paddingBottom="2dp"
+            android:layout_marginTop="10dp"
+            android:text="3 Bedroom Flat"
+            android:layout_gravity="center_horizontal"
+           android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp" />
+        </LinearLayout>
+</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:src="@drawable/pricetag"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+android:id="@+id/imgGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/txtPricing"
+        android:paddingBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:text="N 300,000 "
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp" />
+
+        <ImageView
+            android:src="@drawable/duration"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content" />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/txtTenure"
+            android:layout_marginTop="10dp"
+            android:text="2 Years "
+             android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/worldlocate"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:id="@+id/txtLocation"
+        android:layout_marginTop="10dp"
+        android:text="Cleveland, Ohio USA"
+        android:layout_marginLeft="20dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:typeface="roboto_light"
+        android:textSize="15sp" />
+
+
+
+
+</LinearLayout>
+    <TextView
+        android:id="@+id/txtDistance"
+        android:visibility="gone"
+        android:text="300 Km Away: "
+
+        android:gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:textColor="@color/very_dark_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp" />
+
+
+
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/very_dark_gray" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right" >
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:id="@+id/layoutListen"
+            android:layout_height="wrap_content">
+<ImageView
+    android:src="@drawable/calendar"
+    android:layout_marginTop="10dp"
+    android:id="@+id/imgdateposted"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txtComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginTop="8dp"
+            android:text="300 comments"
+            android:textStyle="italic"
+           android:padding="8dp"
+            android:textColor="@color/test_gray"
+            android:textSize="14sp"
+            />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/btnMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:text="MORE "
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+          />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+</android.support.v7.widget.CardView>

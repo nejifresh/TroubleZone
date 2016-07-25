@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical">
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/homa" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.0"
+        android:src="@mipmap/unjoologo"
+         />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        style="@style/Headline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:alpha="0.0"
+        android:textSize="24sp"
+        android:text="Welcome!"
+        android:textColor="@color/off_white" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:visibility="gone"
+        android:layout_width="300dp"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_height="250dp"
+        android:src="@drawable/homa"
+       />
+
+
+    <TextView
+        android:layout_below="@id/profile_image"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:text="Find true love on WifeMaterial.."
+        android:id="@+id/textstart"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textstart"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="10dp"
+        android:visibility="gone"
+        android:paddingBottom="10dp"/>
+
+</RelativeLayout>
