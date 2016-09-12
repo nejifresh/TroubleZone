@@ -26,8 +26,10 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.nejitawo.troublezone.GlobalClass;
 import com.nejitawo.troublezone.R;
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
@@ -62,6 +64,8 @@ public class HomezoneActivity extends AppCompatActivity implements GoogleApiClie
 
     private String currentCity = "";
     private String currentCountry = "";
+    private String currentNation = "";
+    private String currentState = "";
 private FloatingActionButton fab;
     private EditText txtHomeAddress;
     private Button btnCancel;
@@ -80,49 +84,279 @@ private FloatingActionButton fab;
                 showAlert("Please ensure to setup your Home Zone when you are at your home location. ");
             }
         });
-
+final GlobalClass globalVariable = (GlobalClass)getApplicationContext();
         fab = (FloatingActionButton)findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!txtHomeAddress.getText().toString().isEmpty()){
-                    if (!txtLocation.getText().toString().isEmpty()){
+          if (globalVariable.getHomeID()==1) {
+              //Homezone 1
+              if (!txtHomeAddress.getText().toString().isEmpty()){
+                  if (!txtLocation.getText().toString().isEmpty()){
+
+                      if (globalVariable.getEditOrCreate()==0){
+                          ringProgressDialog = ProgressDialog.show(HomezoneActivity.this,"Please wait..","Setting your Home Zone");
+                          ringProgressDialog.setCancelable(false);
+                          ParseObject homeZone = new ParseObject("HomeZones");
+                          homeZone.put("user", ParseUser.getCurrentUser().getUsername());
+                          homeZone.put("phone",ParseUser.getCurrentUser().get("phone"));
+                          homeZone.put("latitude",nLatitude);
+                          homeZone.put("longitude",nLongitude);
+                          homeZone.put("address",txtHomeAddress.getText().toString());
+                          homeZone.put("geolocation",txtLocation.getText().toString());
+                          homeZone.put("country",currentNation);
+                          homeZone.put("state",currentState);
+                          homeZone.put("city",currentCity);
+                          homeZone.saveInBackground(new SaveCallback() {
+                              @Override
+                              public void done(ParseException e) {
+                                  if (e==null){
+                                      ringProgressDialog.dismiss();
+                                      showSuccess("Home Zone created successfully");
+                                  } else{
+                                      ringProgressDialog.dismiss();
+                                      showFailure("Error occurred. Please try again");
+                                  }
+                              }
+                          });
+                      }else{
+                          ////User is updating the homezone not creating
+                          ringProgressDialog = ProgressDialog.show(HomezoneActivity.this,"Please wait..","Setting your Home Zone");
+                          ringProgressDialog.setCancelable(false);
+
+                          ParseQuery<ParseObject> homeZone = new ParseQuery<ParseObject>("HomeZones");
+                          homeZone.whereEqualTo("user", ParseUser.getCurrentUser().getUsername());
+                          homeZone.findInBackground(new FindCallback<ParseObject>() {
+                              @Override
+                              public void done(List<ParseObject> objects, ParseException e) {
+                                  if (e==null && objects.size()>0){
+                                      for (ParseObject ob: objects){
+                                          ob.put("user", ParseUser.getCurrentUser().getUsername());
+                                          ob.put("phone",ParseUser.getCurrentUser().get("phone"));
+                                          ob.put("latitude",nLatitude);
+                                          ob.put("longitude",nLongitude);
+                                          ob.put("country",currentNation);
+                                          ob.put("state",currentState);
+                                          ob.put("city",currentCity);
+                                          ob.put("address",txtHomeAddress.getText().toString());
+                                          ob.put("geolocation",txtLocation.getText().toString());
+                                          ob.saveInBackground(new SaveCallback() {
+                                              @Override
+                                              public void done(ParseException e) {
+                                                  if (e==null){
+                                                      ringProgressDialog.dismiss();
+                                                      showSuccess("Home Zone created successfully");
+                                                  } else{
+                                                      ringProgressDialog.dismiss();
+                                                      showFailure("Error occurred. Please try again");
+                                                  }
+                                              }
+                                          });
+
+                                      }
+                                  }
+                              }
+                          });
+                      }
 
 
-                        ringProgressDialog = ProgressDialog.show(HomezoneActivity.this,"Please wait..","Setting your Home Zone");
-                        ringProgressDialog.setCancelable(false);
-                        ParseObject homeZone = new ParseObject("HomeZones");
-                        homeZone.put("user", ParseUser.getCurrentUser().getUsername());
-                        homeZone.put("phone",ParseUser.getCurrentUser().get("phone"));
-                        homeZone.put("latitude",nLatitude);
-                        homeZone.put("longitude",nLongitude);
-                        homeZone.put("address",txtHomeAddress.getText().toString());
-                        homeZone.put("geolocation",txtLocation.getText().toString());
-                        homeZone.saveInBackground(new SaveCallback() {
-                            @Override
-                            public void done(ParseException e) {
-                                if (e==null){
-                                    ringProgressDialog.dismiss();
-                                    showSuccess("Home Zone created successfully");
-                                } else{
-                                    ringProgressDialog.dismiss();
-                                    showFailure("Error occurred. Please try again");
-                                }
-                            }
-                        });
-
-                    } else {
+                  } else {
                       //  showAlert("");
-                        txtLocation.setError("Geolocation required");
-                        return;
-                    }
-                    //Now save the homezone
+                      txtLocation.setError("Geolocation required");
+                      return;
+                  }
+                  //Now save the homezone
 
 
-                }else {
-                    txtHomeAddress.setError("Address is required");
-                    return;
-                }
+              }else {
+                  txtHomeAddress.setError("Address is required");
+                  return;
+              }
+
+
+          } else if (globalVariable.getHomeID()==2){
+              //homezone 2
+              if (!txtHomeAddress.getText().toString().isEmpty()){
+                  if (!txtLocation.getText().toString().isEmpty()){
+//User is creating
+                      if (globalVariable.getEditOrCreate()==0){
+                          ringProgressDialog = ProgressDialog.show(HomezoneActivity.this,"Please wait..","Setting your Home Zone");
+                          ringProgressDialog.setCancelable(false);
+                          ParseObject homeZone = new ParseObject("HomeZones2");
+                          homeZone.put("user", ParseUser.getCurrentUser().getUsername());
+                          homeZone.put("phone",ParseUser.getCurrentUser().get("phone"));
+                          homeZone.put("latitude",nLatitude);
+                          homeZone.put("longitude",nLongitude);
+                          homeZone.put("country",currentNation);
+                          homeZone.put("state",currentState);
+                          homeZone.put("city",currentCity);
+                          homeZone.put("address",txtHomeAddress.getText().toString());
+                          homeZone.put("geolocation",txtLocation.getText().toString());
+                          homeZone.saveInBackground(new SaveCallback() {
+                              @Override
+                              public void done(ParseException e) {
+                                  if (e==null){
+                                      ringProgressDialog.dismiss();
+                                      showSuccess("Home Zone created successfully");
+                                  } else{
+                                      ringProgressDialog.dismiss();
+                                      showFailure("Error occurred. Please try again");
+                                  }
+                              }
+                          });
+                      } else{
+                          ////
+                          //edit homezone
+                          ringProgressDialog = ProgressDialog.show(HomezoneActivity.this,"Please wait..","Setting your Home Zone");
+                          ringProgressDialog.setCancelable(false);
+//user is updating
+                          ParseQuery<ParseObject> homeZone = new ParseQuery<ParseObject>("HomeZones2");
+                          homeZone.whereEqualTo("user", ParseUser.getCurrentUser().getUsername());
+                          homeZone.findInBackground(new FindCallback<ParseObject>() {
+                              @Override
+                              public void done(List<ParseObject> objects, ParseException e) {
+                                  if (e==null && objects.size()>0){
+                                      for (ParseObject ob: objects){
+                                          ob.put("user", ParseUser.getCurrentUser().getUsername());
+                                          ob.put("phone",ParseUser.getCurrentUser().get("phone"));
+                                          ob.put("latitude",nLatitude);
+                                          ob.put("longitude",nLongitude);
+                                          ob.put("country",currentNation);
+                                          ob.put("state",currentState);
+                                          ob.put("city",currentCity);
+                                          ob.put("address",txtHomeAddress.getText().toString());
+                                          ob.put("geolocation",txtLocation.getText().toString());
+
+                                          ob.saveInBackground(new SaveCallback() {
+                                              @Override
+                                              public void done(ParseException e) {
+                                                  if (e==null){
+                                                      ringProgressDialog.dismiss();
+                                                      showSuccess("Home Zone created successfully");
+                                                  } else{
+                                                      ringProgressDialog.dismiss();
+                                                      showFailure("Error occurred. Please try again");
+                                                  }
+                                              }
+                                          });
+
+                                      }
+                                  }
+                              }
+                          });
+
+                      }
+
+
+                  } else {
+                      //  showAlert("");
+                      txtLocation.setError("Geolocation required");
+                      return;
+                  }
+                  //Now save the homezone
+
+
+              }else {
+                  txtHomeAddress.setError("Address is required");
+                  return;
+              }
+
+          } else if (globalVariable.getHomeID()==3){
+              //homezone3
+              if (!txtHomeAddress.getText().toString().isEmpty()){
+                  if (!txtLocation.getText().toString().isEmpty()){
+
+
+                      ringProgressDialog = ProgressDialog.show(HomezoneActivity.this,"Please wait..","Setting your Home Zone");
+                      ringProgressDialog.setCancelable(false);
+
+                      //run edit or create
+
+                      if (globalVariable.getEditOrCreate()==0){
+                          //create new homezone
+                          ParseObject homeZone = new ParseObject("HomeZones3");
+                          homeZone.put("user", ParseUser.getCurrentUser().getUsername());
+                          homeZone.put("phone",ParseUser.getCurrentUser().get("phone"));
+                          homeZone.put("latitude",nLatitude);
+                          homeZone.put("longitude",nLongitude);
+                          homeZone.put("country",currentNation);
+                          homeZone.put("state",currentState);
+                          homeZone.put("city",currentCity);
+                          homeZone.put("address",txtHomeAddress.getText().toString());
+                          homeZone.put("geolocation",txtLocation.getText().toString());
+                          homeZone.saveInBackground(new SaveCallback() {
+                              @Override
+                              public void done(ParseException e) {
+                                  if (e==null){
+                                      ringProgressDialog.dismiss();
+                                      showSuccess("Home Zone created successfully");
+                                  } else{
+                                      ringProgressDialog.dismiss();
+                                      showFailure("Error occurred. Please try again");
+                                  }
+                              }
+                          });
+
+
+                      }else{
+                          //edit homezone
+                          ringProgressDialog = ProgressDialog.show(HomezoneActivity.this,"Please wait..","Setting your Home Zone");
+                          ringProgressDialog.setCancelable(false);
+
+                          ParseQuery<ParseObject> homeZone = new ParseQuery<ParseObject>("HomeZones3");
+                          homeZone.whereEqualTo("user", ParseUser.getCurrentUser().getUsername());
+                          homeZone.findInBackground(new FindCallback<ParseObject>() {
+                              @Override
+                              public void done(List<ParseObject> objects, ParseException e) {
+                                  if (e==null && objects.size()>0){
+                                      for (ParseObject ob: objects){
+                                          ob.put("user", ParseUser.getCurrentUser().getUsername());
+                                          ob.put("phone",ParseUser.getCurrentUser().get("phone"));
+                                          ob.put("latitude",nLatitude);
+                                          ob.put("longitude",nLongitude);
+                                          ob.put("country",currentNation);
+                                          ob.put("state",currentState);
+                                          ob.put("city",currentCity);
+                                          ob.put("address",txtHomeAddress.getText().toString());
+                                          ob.put("geolocation",txtLocation.getText().toString());
+                                          ob.saveInBackground(new SaveCallback() {
+                                              @Override
+                                              public void done(ParseException e) {
+                                                  if (e==null){
+                                                      ringProgressDialog.dismiss();
+                                                      showSuccess("Home Zone created successfully");
+                                                  } else{
+                                                      ringProgressDialog.dismiss();
+                                                      showFailure("Error occurred. Please try again");
+                                                  }
+                                              }
+                                          });
+
+                                      }
+                                  }
+                              }
+                          });
+
+
+                      }
+
+
+
+                  } else {
+                      //  showAlert("");
+                      txtLocation.setError("Geolocation required");
+                      return;
+                  }
+                  //Now save the homezone
+
+
+              }else {
+                  txtHomeAddress.setError("Address is required");
+                  return;
+              }
+
+          }
+
             }
         });
 
@@ -337,6 +571,8 @@ private class ReverseGeocodingTask extends AsyncTask<Double, Void, String> {
          currentAddress =  (address.getLocality() + ", " + address.getAdminArea());
             currentCountry = address.getCountryName();
             currentCity = address.getLocality();
+            currentNation = address.getCountryName();
+            currentState = address.getAdminArea();
 
 
 

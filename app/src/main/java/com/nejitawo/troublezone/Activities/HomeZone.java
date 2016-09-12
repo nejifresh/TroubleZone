@@ -1,10 +1,15 @@
 package com.nejitawo.troublezone.Activities;
 
+import android.Manifest;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.location.Geocoder;
 import android.location.Location;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -28,16 +33,16 @@ public class HomeZone extends SupportMapFragment implements GoogleApiClient.Conn
         GoogleMap.OnInfoWindowClickListener,
         GoogleMap.OnMapLongClickListener,
         GoogleMap.OnMapClickListener,
-        GoogleMap.OnMarkerClickListener{
+        GoogleMap.OnMarkerClickListener {
 
     private GoogleApiClient mGoogleApiClient;
     private Location mCurrentLocation;
 
-    private final int[] MAP_TYPES = { GoogleMap.MAP_TYPE_SATELLITE,
+    private final int[] MAP_TYPES = {GoogleMap.MAP_TYPE_SATELLITE,
             GoogleMap.MAP_TYPE_NORMAL,
             GoogleMap.MAP_TYPE_HYBRID,
             GoogleMap.MAP_TYPE_TERRAIN,
-            GoogleMap.MAP_TYPE_NONE };
+            GoogleMap.MAP_TYPE_NONE};
     private int curMapTypeIndex = 1;
 
 
@@ -49,8 +54,7 @@ public class HomeZone extends SupportMapFragment implements GoogleApiClient.Conn
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
-     *  @Override
-    public void onMapReady(GoogleMap googleMap) {
+     *  @Override public void onMapReady(GoogleMap googleMap) {
     mMap = googleMap;
 
     // Add a marker in Sydney and move the camera
@@ -65,10 +69,10 @@ public class HomeZone extends SupportMapFragment implements GoogleApiClient.Conn
 
         setHasOptionsMenu(true);
 
-        mGoogleApiClient = new GoogleApiClient.Builder( getActivity() )
-                .addConnectionCallbacks( this )
-                .addOnConnectionFailedListener( this )
-                .addApi( LocationServices.API )
+        mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
                 .build();
 
         initListeners();
@@ -77,7 +81,7 @@ public class HomeZone extends SupportMapFragment implements GoogleApiClient.Conn
     private void initListeners() {
         getMap().setOnMarkerClickListener(this);
         getMap().setOnMapLongClickListener(this);
-        getMap().setOnInfoWindowClickListener( this );
+        getMap().setOnInfoWindowClickListener(this);
         getMap().setOnMapClickListener(this);
     }
 
@@ -90,34 +94,86 @@ public class HomeZone extends SupportMapFragment implements GoogleApiClient.Conn
     @Override
     public void onStop() {
         super.onStop();
-        if( mGoogleApiClient != null && mGoogleApiClient.isConnected() ) {
+        if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
         }
     }
 
-    private void initCamera( Location location ) {
-        CameraPosition position = CameraPosition.builder()
-                .target( new LatLng( location.getLatitude(),
-                        location.getLongitude() ) )
-                .zoom( 16f )
-                .bearing( 0.0f )
-                .tilt( 0.0f )
-                .build();
+    private void initCamera(Location location) {
+     try{
+         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+             // TODO: Consider calling
+             //    ActivityCompat#requestPermissions
+             // here to request the missing permissions, and then overriding
+             //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+             //                                          int[] grantResults)
+             // to handle the case where the user grants the permission. See the documentation
+             // for ActivityCompat#requestPermissions for more details.
+             return;
+         }
 
-        getMap().animateCamera( CameraUpdateFactory
-                .newCameraPosition( position ), null );
+         CameraPosition position = CameraPosition.builder()
+                 .target(new LatLng(location.getLatitude(),
+                         location.getLongitude()))
+                 .zoom(16f)
+                 .bearing(0.0f)
+                 .tilt(0.0f)
+                 .build();
 
-        getMap().setMapType( MAP_TYPES[curMapTypeIndex] );
-        getMap().setTrafficEnabled( true );
-        getMap().setMyLocationEnabled( true );
-        getMap().getUiSettings().setZoomControlsEnabled( true );
+         getMap().animateCamera(CameraUpdateFactory
+                 .newCameraPosition(position), null);
+
+         getMap().setMapType(MAP_TYPES[curMapTypeIndex]);
+         getMap().setTrafficEnabled(true);
+
+         getMap().setMyLocationEnabled(true);
+         getMap().getUiSettings().setZoomControlsEnabled(true);
+
+     } catch (Exception e){
+         e.printStackTrace();
+
+         //normally error occurs due to inability to find location
+     }
+
+
+
+    }
+
+    private void buildAlertMessageNoGps() {
+        final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
+        builder.setMessage("Your location is required do you want to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog,  final int id) {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        dialog.cancel();
+                        getActivity().  finish();
+                    }
+                });
+        final android.app.AlertDialog alert = builder.create();
+        alert.show();
+
     }
 
     @Override
     public void onConnected(Bundle bundle) {
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         mCurrentLocation = LocationServices
                 .FusedLocationApi
-                .getLastLocation( mGoogleApiClient );
+                .getLastLocation(mGoogleApiClient);
 
         initCamera( mCurrentLocation );
     }
@@ -131,7 +187,7 @@ public class HomeZone extends SupportMapFragment implements GoogleApiClient.Conn
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
+buildAlertMessageNoGps();
     }
 
     @Override

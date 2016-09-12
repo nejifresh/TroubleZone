@@ -22,7 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/errorwarning"
-        android:visibility="visible"
+
+        android:visibility="gone"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         app:backgroundTint="@color/red"

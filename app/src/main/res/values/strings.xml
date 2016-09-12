@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TroubleZone</string>
+    <string name="app_name">Troublezone</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -7,7 +7,7 @@
     <string name="letshearcontent">How did your choice make you feel?</string>
     <string name="action_settings">Settings</string>
     <string name="NotDo">Not For Me</string>
-  <string name="heading">Shine your eye</string>
+    <string name="heading">Trouble Zone</string>
     <string name="Doit">I Choose To Do This</string>
     <string name="Complete">Complete</string>
     <string name="oncemore">Once more</string>
@@ -28,13 +28,13 @@
     <string name="err_msg_email">Enter valid email address</string>
     <string name="err_msg_password">Enter the password</string>
 
-    <string name="disclaimer">1. GENERAL \n1.1 By installing this Nairachat Mobile Application, you agree to be bound by these terms of use (appterms). Please review them carefully before installation and or acceptance.
- \n2. DEFINITIONS  \nThe Nairachat Mobile Application shall mean the software provided by Blueray Systems &amp; Solutions Limited to offer taxi search services.\n
+    <string name="disclaimer">1. GENERAL \n1.1 By installing this Troublezone Mobile Application, you agree to be bound by these terms of use (appterms). Please review them carefully before installation and or acceptance.
+ \n2. DEFINITIONS  \nThe Troublezone Mobile Application shall mean the software provided by Blueray Systems &amp; Solutions Limited to offer taxi search services.\n
  \n3. DATA PROTECTION \n
-Any personal information you supply when using the Nairachat Mobile Application will be used by Blueray Systems &amp; Solutions Limited in accordance with its Privacy Policy.
+Any personal information you supply when using the Troublezone Mobile Application will be used by Blueray Systems &amp; Solutions Limited in accordance with its Privacy Policy.
  \n \n
-4. NAIRACHAT MOBILE APPLICATION \n
-The Nairachat Mobile Application allows you to find Taxis around your location. Such access will be governed by the Blueray Systems &amp; Solutions Limited Terms of Use.
+4. TROUBLEZONE MOBILE APPLICATION \n
+The Troublezone Mobile Application displays incidents alerts happening around your location. Such access will be governed by the Blueray Systems &amp; Solutions Limited Terms of Use.
  \n \n
 5.USE OF APPLICATION\n
 5.1. Blueray Systems &amp; Solutions Limited grants you the non-exclusive, non-transferable, limited right and license to install and use this Application solely and exclusively for your personal use.\n
@@ -42,28 +42,28 @@ The Nairachat Mobile Application allows you to find Taxis around your location. 
 5.3. You agree that you are solely responsible for (and that Blueray Systems &amp; Solutions Limited has no responsibility to you or to any third party for) your use of the Application, any breach of your obligations under the Terms and Conditions, and for the consequences (including any loss or damage which The Company may suffer) of any such breach.\n
  \n
 6. PROPRIETARY RIGHTS AND LICENCE \n
-6.1. All trade marks, copyright, database rights and other intellectual property rights of any nature in the Nairachat Mobile Application together with the underlying software code are owned either directly by Blueray Systems &amp; Solutions Limited or by Blueray Systems &amp; Solutions Limited licensors. \n
-6.2. Blueray Systems &amp; Solutions Limited hereby grants you a worldwide, non-exclusive, royalty-free revocable licence to use the Nairachat Mobile Application for your business and personal use in accordance with these appterms. \n
+6.1. All trade marks, copyright, database rights and other intellectual property rights of any nature in the Troublezone Mobile Application together with the underlying software code are owned either directly by Blueray Systems &amp; Solutions Limited or by Blueray Systems &amp; Solutions Limited licensors. \n
+6.2. Blueray Systems &amp; Solutions Limited hereby grants you a worldwide, non-exclusive, royalty-free revocable licence to use the Troublezone Mobile Application for your business and personal use in accordance with these appterms. \n
  \n7. CONDITIONS OF USE \n
-7.1. You will not, nor allow third parties on your behalf to (i) make and distribute copies of the Nairachat Mobile Application (ii) attempt to copy, reproduce, alter, modify, reverse engineer, disassemble, decompile, transfer, exchange or translate the Nairachat Mobile Application; or (iii) create derivative works of the Nairachat Mobile Application of any kind whatsoever.
- \n7.2. The Nairachat Mobile Application is currently made available to you free of charge for your personal, non-commercial use. Blueray Systems &amp; Solutions Limited reserves the right to amend or withdraw the Nairachat Mobile Application, or charge for the Nairachat Mobile Application or service provided to you in accordance with these appterms, at any time and for any reason.
- \n7.3. You acknowledge that the terms of agreement with your respective mobile network provider (\‘Mobile Provider\’) will continue to apply when using the Nairachat Mobile Application. As a result, you may be charged by the Mobile Provider for access to network connection services for the duration of the connection while accessing the Nairachat Mobile Application or any such third party charges as may arise. You accept responsibility for any such charges that arise.
- \n7.4. If you are not the bill payer for the mobile telephone or handheld device being used to access the Nairachat Mobile Application, you will be assumed to have received permission from the bill payer for using the Nairachat Mobile Application.
+7.1. You will not, nor allow third parties on your behalf to (i) make and distribute copies of the Troublezone Mobile Application (ii) attempt to copy, reproduce, alter, modify, reverse engineer, disassemble, decompile, transfer, exchange or translate the Troublezone Mobile Application; or (iii) create derivative works of the Troublezone Mobile Application of any kind whatsoever.
+ \n7.2. The Troublezone Mobile Application is currently made available to you free of charge for your personal, non-commercial use. Blueray Systems &amp; Solutions Limited reserves the right to amend or withdraw the Troublezone Mobile Application, or charge for the Troublezone Mobile Application or service provided to you in accordance with these appterms, at any time and for any reason.
+ \n7.3. You acknowledge that the terms of agreement with your respective mobile network provider (\‘Mobile Provider\’) will continue to apply when using the Troublezone Mobile Application. As a result, you may be charged by the Mobile Provider for access to network connection services for the duration of the connection while accessing the Troublezone Mobile Application or any such third party charges as may arise. You accept responsibility for any such charges that arise.
+ \n7.4. If you are not the bill payer for the mobile telephone or handheld device being used to access the Troublezone Mobile Application, you will be assumed to have received permission from the bill payer for using the Troublezone Mobile Application.
  \n \n8. AVAILABILITY
- \n8.1. This Nairachat Mobile Application is available to handheld mobile devices running Apple iOS , Windows Phone, Blackberry and Android OS Operating Systems. Blueray Systems &amp; Solutions Limited will use reasonable efforts to make the Nairachat Mobile Application available at all times. However you acknowledge the Nairachat Mobile Application is provided over the internet and mobile networks and so the quality and availability of the Nairachat Mobile Application may be affected by factors outside Blueray Systems &amp; Solutions Limited’s reasonable control.
- \n8.2. Blueray Systems &amp; Solutions Limited, its group of companies and sub-contractors do not accept any responsibility whatsoever for unavailability of the Nairachat Mobile Application, or any difficulty or inability to download or access content or any other communication system failure which may result in the Nairachat Mobile Application being unavailable.
-         \n8.3. Blueray Systems &amp; Solutions Limited will not be responsible for any support or maintenance for the Nairachat Mobile Application.
+ \n8.1. This Troublezone Mobile Application is available to handheld mobile devices running Apple iOS , Windows Phone, Blackberry and Android OS Operating Systems. Blueray Systems &amp; Solutions Limited will use reasonable efforts to make the Troublezone Mobile Application available at all times. However you acknowledge the Troublezone Mobile Application is provided over the internet and mobile networks and so the quality and availability of the Troublezone Mobile Application may be affected by factors outside Blueray Systems &amp; Solutions Limited’s reasonable control.
+ \n8.2. Blueray Systems &amp; Solutions Limited, its group of companies and sub-contractors do not accept any responsibility whatsoever for unavailability of the Troublezone Mobile Application, or any difficulty or inability to download or access content or any other communication system failure which may result in the Troublezone Mobile Application being unavailable.
+         \n8.3. Blueray Systems &amp; Solutions Limited will not be responsible for any support or maintenance for the Troublezone Mobile Application.
  \n \n9. SYSTEM REQUIREMENTS
- \n9.1. In order to use the Nairachat Mobile Application, you are required to have a compatible mobile telephone or handheld device, internet access, and the necessary minimum specifications (Software Requirements).
+ \n9.1. In order to use the Troublezone Mobile Application, you are required to have a compatible mobile telephone or handheld device, internet access, and the necessary minimum specifications (Software Requirements).
  \n9.2. The Software Requirements are as follows: Apple iOS devices running iOS 4 or iOS 5, and Android OS devices running Android OS 4.0  up ; Language: English.
- \n9.3. The version of the Nairachat Mobile Application software may be upgraded from time to time to add support for new functions and services.
+ \n9.3. The version of the Troublezone Mobile Application software may be upgraded from time to time to add support for new functions and services.
  \n \n10. TERMINATION
- \n10.1. Blueray Systems &amp; Solutions Limited may terminate use of the Nairachat Mobile Application at any time by giving notice of termination to you.
+ \n10.1. Blueray Systems &amp; Solutions Limited may terminate use of the Troublezone Mobile Application at any time by giving notice of termination to you.
  \n10.2. Upon any termination, (a) the rights and licenses granted to you herein shall terminate; (b) you must cease all use of the Software;
  \n \n11. LIMITATION OF LIABILITY
- \n11.1. In no event will Blueray Systems &amp; Solutions Limited be liable for any direct, indirect, special, punitive, exemplary or consequential losses or damages of whatsoever kind arising out of your use or access to the Nairachat Mobile Application, including loss of profit or the like whether or not in the contemplation of the parties, whether based on breach of contract, tort (including negligence), product liability or otherwise. \n 11.2. Blueray Systems &amp; Solutions Limited is not liable to you for any damage or alteration to your equipment including but not limited to computer equipment, handheld device or mobile telephones as a result of the installation or use of the Nairachat Mobile Application.
- \n11.3. Blueray Systems &amp; Solutions Limited will not accept liability for any incidents or losses arising from the usage of the Nairachat Mobile Application. Hence you are advised to exercise extreme caution when dealing with drivers contacted or contracted via this application.
- \n \n12. DISCLAIMER OF WARRANTIES \nTo the maximum extent permitted by law, and for the avoidance of doubt, Blueray Systems &amp; Solutions Limited hereby disclaims all implied warranties with regard to the Nairachat Mobile Application. The Nairachat Mobile Application and software are provided \"as is\" and \"as available\" without warranty of any kind. Please note that Blueray Systems &amp; Solutions Limited will not be liable for any losses or incidents arising from the usage of this service. Users are advised to proceed with caution.
+ \n11.1. In no event will Blueray Systems &amp; Solutions Limited be liable for any direct, indirect, special, punitive, exemplary or consequential losses or damages of whatsoever kind arising out of your use or access to the Troublezone Mobile Application, including loss of profit or the like whether or not in the contemplation of the parties, whether based on breach of contract, tort (including negligence), product liability or otherwise. \n 11.2. Blueray Systems &amp; Solutions Limited is not liable to you for any damage or alteration to your equipment including but not limited to computer equipment, handheld device or mobile telephones as a result of the installation or use of the Troublezone Mobile Application.
+ \n11.3. Blueray Systems &amp; Solutions Limited will not accept liability for any incidents or losses arising from the usage of the Troublezone Mobile Application. Hence you are advised to exercise extreme caution when dealing with alerts, user posts and other information contacted or contracted via this application.
+ \n \n12. DISCLAIMER OF WARRANTIES \nTo the maximum extent permitted by law, and for the avoidance of doubt, Blueray Systems &amp; Solutions Limited hereby disclaims all implied warranties with regard to the Troublezone Mobile Application. The Troublezone Mobile Application and software are provided \"as is\" and \"as available\" without warranty of any kind. Please note that Blueray Systems &amp; Solutions Limited will not be liable for any losses or incidents arising from the usage of this service. Users are advised to proceed with caution.
 
 </string>
 

@@ -87,7 +87,7 @@
                 android:ellipsize="end"
                 android:lines="5"
                 android:maxLines="5"
-                android:hint="Briefly describe the incident captured in the photo"
+                android:hint="Briefly describe the incident "
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="#212121" />
 
@@ -105,8 +105,8 @@
         <Button android:id="@+id/btn_signup"
             android:layout_width="fill_parent"
             android:layout_height="60dp"
-            android:text="Upload Photo"
-            android:background="@color/colorAccent"
+            android:text="Post Content"
+            android:background="@color/colorPrimary"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"

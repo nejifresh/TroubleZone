@@ -106,7 +106,7 @@ android:drawableLeft="@drawable/emailwhite"
             android:layout_marginLeft="20dp"
             android:textStyle="bold"
             android:layout_marginRight="20dp"
-            android:hint="Mobile Number - 080.." />
+            android:hint="Mobile Number - +.." />
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_marginTop="20dp"

@@ -31,9 +31,11 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.nejitawo.troublezone.Activities.MapActivity;
 import com.nejitawo.troublezone.Adapters.EventsAdapter;
 import com.nejitawo.troublezone.Adapters.IncidentAdapter;
 import com.nejitawo.troublezone.Capture.NewPicture;
+import com.nejitawo.troublezone.GPSTracker;
 import com.nejitawo.troublezone.GlobalClass;
 import com.nejitawo.troublezone.Model.Events;
 import com.nejitawo.troublezone.R;
@@ -63,6 +65,7 @@ public class Alerts extends Fragment implements GoogleApiClient.ConnectionCallba
     private String currentCity = "";
     private String currentCountry = "";
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 1000;
+    private GPSTracker locator;
 
     private Location mLastLocation;
 
@@ -106,7 +109,7 @@ public class Alerts extends Fragment implements GoogleApiClient.ConnectionCallba
                 showPrompt();
             }
         });
-
+        locator = new GPSTracker(getActivity().getApplicationContext());
         choiceList = (ListView) rootView.findViewById(R.id.usersListView);
       //  lvContent = (LinearLayout)rootView.findViewById(R.id.visibleContent);
         progressView = (CircularProgressView) rootView.findViewById(R.id.progress_view);
@@ -282,15 +285,20 @@ public class Alerts extends Fragment implements GoogleApiClient.ConnectionCallba
                         globalVariable.setImage2(thisStar.getImage2());
                         globalVariable.setImage3(thisStar.getImage3());
                         globalVariable.setImage4(thisStar.getImage4());
-
                         globalVariable.setState(thisStar.getState());
+                    **/
+                        globalVariable.setMainTitle(thisStar.getEventType());
+                        globalVariable.setTitle(thisStar.getLocality());
+                        globalVariable.setLatitude(thisStar.getLatitude());
+                        globalVariable.setLongitude(thisStar.getLongitude());
+                        globalVariable.setIncidentID(thisStar.getId());
+                        globalVariable.setUserLat(nLatitude);
+                        globalVariable.setUserLong(nLongitude);
                         //   Toast.makeText(getActivity(), thisWife.getFullName().toString() + position, Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                        intent.putExtra(DetailsActivity.EXTRA_PARAM_ID, position);
-                        progressView.stopAnimation();
-                        progressView.setVisibility(View.INVISIBLE);
+                        Intent intent = new Intent(getActivity(), MapActivity.class);
+
                         startActivity(intent);
-**/
+
 
                     }
                 });
@@ -767,7 +775,21 @@ new ReverseGeocodingTask(getActivity()).execute();
 
         } else {
           //  buildAlertMessageNoGps();
-            Toast.makeText(getActivity(), "(Couldn't get the location. Make sure location is enabled on the device)", Toast.LENGTH_LONG).show();
+            try{
+                mLastLocation = locator.getLocation();
+                nLatitude = mLastLocation.getLatitude();
+                nLongitude = mLastLocation.getLongitude();
+                final GlobalClass globalvariable = (GlobalClass)getActivity().  getApplicationContext();
+                globalvariable.setLatitude(nLatitude);
+                globalvariable.setLongitude(nLongitude);
+                new ReverseGeocodingTask(getActivity()).execute();
+                //  Toast.makeText(getActivity(), "(Couldn't get regular google location. Make sure location is enabled on the device)", Toast.LENGTH_LONG).show();
+
+            } catch (Exception e){
+              //  buildAlertMessageNoGps();
+                e.printStackTrace();
+            }
+           // Toast.makeText(getActivity(), "(Couldn't get the location. Make sure location is enabled on the device)", Toast.LENGTH_LONG).show();
         }
     }
 

@@ -258,7 +258,7 @@ buildConfirmAlert();
         alertDialog.setTitle("Confirm Posting...");
 
         // Setting Dialog Message
-        alertDialog.setMessage("Are you sure you want to post this picture?");
+        alertDialog.setMessage("Are you sure you want to post this?");
 
         // Setting Icon to Dialog
         alertDialog.setIcon(android.R.drawable.ic_menu_save);
@@ -289,7 +289,7 @@ buildConfirmAlert();
                             new UploadFileToServer().execute();
                         } else{
                             //throw error message
-                            showAlert("Image is required");
+                            showAlert("Do you want to post without an image?");
 
                         }
 
@@ -827,12 +827,24 @@ ringProgressDialog.dismiss();
         AlertDialog.Builder builder = new AlertDialog.Builder(NewPicture.this);
         builder.setMessage(message).setTitle("Application Response")
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // do nothing
-                        //  createdoc();
+                        ringProgressDialog = ProgressDialog.show(NewPicture.this, "Please wait ...",	"posting in progress ...", true);
+                        ringProgressDialog.setCancelable(false);   ringProgressDialog.setCancelable(false);
+
+                        createdoc();
+
                     }
                 });
+
+
         AlertDialog alert = builder.create();
         alert.show();
     }
@@ -844,7 +856,7 @@ ringProgressDialog.dismiss();
         alertDialog.setTitle("Success..");
 
         // Setting Dialog Message
-        alertDialog.setMessage("Incident Image uploaded successfully..");
+        alertDialog.setMessage("Incident description posted successfully..");
 
         // Setting Icon to Dialog
         alertDialog.setIcon(android.R.drawable.ic_dialog_info);

@@ -2,6 +2,8 @@ package com.nejitawo.troublezone;
 
 import android.app.Application;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
 import com.parse.Parse;
 
 import java.util.Date;
@@ -63,7 +65,43 @@ public class GlobalClass extends Application {
     private String incidentID;
 
     private int screenIndex;
+    private int homeID;
+    private int EditOrCreate; //Integer variable defines whether we edit or create
 
+    private Double userLat;
+    private Double userLong;
+
+    private String timeLineLocation;
+    private Boolean enableAlerts;
+    private int alertRadius;
+    private Boolean enableSMS;
+    private  String smsNumbers;
+    private int noOfHomezones;
+    private String activeHomeZone;
+    private String userName;
+    private String phone1;
+    private String phone2;
+    private String phone3;
+
+    private Double lat1;
+    private Double lon1;
+
+    private Double lat2;
+    private Double lon2;
+
+    private Double lat3;
+    private Double lon3;
+
+    private Boolean isSubscribed;
+    private Tracker mTracker;
+    synchronized public Tracker getDefaultTracker() {
+        if (mTracker == null) {
+            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+            // Setting mTracker to Analytics Tracker declared in our xml Folder
+            mTracker = analytics.newTracker(R.xml.analytics_tracker);
+        }
+        return mTracker;
+    }
 
     public void onCreate() {
 
@@ -74,6 +112,183 @@ public class GlobalClass extends Application {
 
 /* For dj app*/
 
+    public Boolean getSubscribed() {
+        return isSubscribed;
+    }
+
+    public void setSubscribed(Boolean subscribed) {
+        isSubscribed = subscribed;
+    }
+
+    public Double getLat1() {
+        return lat1;
+    }
+
+    public void setLat1(Double lat1) {
+        this.lat1 = lat1;
+    }
+
+    public Double getLon1() {
+        return lon1;
+    }
+
+    public void setLon1(Double lon1) {
+        this.lon1 = lon1;
+    }
+
+    public Double getLat2() {
+        return lat2;
+    }
+
+    public void setLat2(Double lat2) {
+        this.lat2 = lat2;
+    }
+
+    public Double getLon2() {
+        return lon2;
+    }
+
+    public void setLon2(Double lon2) {
+        this.lon2 = lon2;
+    }
+
+    public Double getLat3() {
+        return lat3;
+    }
+
+    public void setLat3(Double lat3) {
+        this.lat3 = lat3;
+    }
+
+    public Double getLon3() {
+        return lon3;
+    }
+
+    public void setLon3(Double lon3) {
+        this.lon3 = lon3;
+    }
+
+    public String getPhone1() {
+        return phone1;
+    }
+
+    public void setPhone1(String phone1) {
+        this.phone1 = phone1;
+    }
+
+    public String getPhone2() {
+        return phone2;
+    }
+
+    public void setPhone2(String phone2) {
+        this.phone2 = phone2;
+    }
+
+    public String getPhone3() {
+        return phone3;
+    }
+
+    public void setPhone3(String phone3) {
+        this.phone3 = phone3;
+    }
+
+    public String getTimeLineLocation() {
+        return timeLineLocation;
+    }
+
+    public void setTimeLineLocation(String timeLineLocation) {
+        this.timeLineLocation = timeLineLocation;
+    }
+
+    public Boolean getEnableAlerts() {
+        return enableAlerts;
+    }
+
+    public void setEnableAlerts(Boolean enableAlerts) {
+        this.enableAlerts = enableAlerts;
+    }
+
+    public int getAlertRadius() {
+        return alertRadius;
+    }
+
+    public void setAlertRadius(int alertRadius) {
+        this.alertRadius = alertRadius;
+    }
+
+    public Boolean getEnableSMS() {
+        return enableSMS;
+    }
+
+    public void setEnableSMS(Boolean enableSMS) {
+        this.enableSMS = enableSMS;
+    }
+
+    public String getSmsNumbers() {
+        return smsNumbers;
+    }
+
+    public void setSmsNumbers(String smsNumbers) {
+        this.smsNumbers = smsNumbers;
+    }
+
+    public int getNoOfHomezones() {
+        return noOfHomezones;
+    }
+
+    public void setNoOfHomezones(int noOfHomezones) {
+        this.noOfHomezones = noOfHomezones;
+    }
+
+    public String getActiveHomeZone() {
+        return activeHomeZone;
+    }
+
+    public void setActiveHomeZone(String activeHomeZone) {
+        this.activeHomeZone = activeHomeZone;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+
+
+    public int getEditOrCreate() {
+        return EditOrCreate;
+    }
+
+    public void setEditOrCreate(int editOrCreate) {
+        EditOrCreate = editOrCreate;
+    }
+
+    public int getHomeID() {
+        return homeID;
+    }
+
+    public void setHomeID(int homeID) {
+        this.homeID = homeID;
+    }
+
+    public Double getUserLat() {
+        return userLat;
+    }
+
+    public void setUserLat(Double userLat) {
+        this.userLat = userLat;
+    }
+
+    public Double getUserLong() {
+        return userLong;
+    }
+
+    public void setUserLong(Double userLong) {
+        this.userLong = userLong;
+    }
 
     public int getScreenIndex() {
         return screenIndex;

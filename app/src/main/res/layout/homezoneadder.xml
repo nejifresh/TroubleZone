@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout"
+        android:orientation="vertical"
+        >
+
+        <!-- TODO: Update blank fragment layout -->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+   android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/ivLocate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/marker" />
+
+            <Spinner
+                android:id="@+id/spmyCountry"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivLocate"
+                android:layout_toRightOf="@id/ivLocate"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#212121" />
+
+            <EditText
+                android:id="@+id/txtmyCountry"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivLocate"
+                android:layout_toRightOf="@id/ivLocate"
+                android:text="Lagos, Nigeria"
+                android:layout_below="@+id/btnChangeCountry"
+
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtcountry"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtmyCountry"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/ivLocate"
+                android:layout_toRightOf="@id/ivLocate"
+                android:text="Primary Home Zone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+            <Button
+                android:id="@+id/btnChangeCountry"
+                android:visibility="visible"
+
+                android:text="Change/Add "
+                android:clickable="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorAccent"
+                android:background="@color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/ivLocate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/marker" />
+
+
+
+            <EditText
+                android:id="@+id/txtmyCountry2"
+                android:visibility="visible"
+                android:layout_width="200dp"
+                android:enabled="false"
+                android:hint="No Secondary Home Zone"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivLocate2"
+                android:layout_toRightOf="@id/ivLocate2"
+                android:text=""
+            android:layout_below="@+id/btnChangeCountry2"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtcountry2"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtmyCountry2"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/ivLocate2"
+                android:layout_toRightOf="@id/ivLocate2"
+                android:text="Secondary Home Zone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+            <Button
+                android:id="@+id/btnChangeCountry2"
+                android:visibility="visible"
+                android:text="Change/Add "
+                android:clickable="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorAccent"
+                android:background="@color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+             android:padding="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/ivLocate3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/marker" />
+
+
+
+            <EditText
+                android:id="@+id/txtmyCountry3"
+                android:visibility="visible"
+                android:layout_width="200dp"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivLocate3"
+                android:layout_toRightOf="@id/ivLocate3"
+                android:text=""
+                android:layout_below="@+id/btnChangeCountry3"
+              android:hint="No Tetiary Home Zone"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtcountry3"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtmyCountry3"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/ivLocate3"
+                android:layout_toRightOf="@id/ivLocate3"
+                android:text="Tetiary Home Zone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#727272" />
+
+            <Button
+                android:id="@+id/btnChangeCountry3"
+                android:visibility="visible"
+                android:text="Change/Add "
+                android:clickable="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorAccent"
+                android:background="@color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>

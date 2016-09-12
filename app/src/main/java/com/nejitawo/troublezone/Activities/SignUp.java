@@ -41,6 +41,7 @@ import com.nejitawo.troublezone.Imageutil.PicModeSelectDialogFragment;
 import com.nejitawo.troublezone.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -174,6 +175,7 @@ public class SignUp extends AppCompatActivity implements PicModeSelectDialogFrag
 
         }else {
             txtPhone.setError("Mobile Number required");
+            return;
         }
 
 
@@ -219,7 +221,7 @@ public class SignUp extends AppCompatActivity implements PicModeSelectDialogFrag
         } else{
             //throw error message
             showAlert("Pls Provide Profile Image");
-
+            return;
         }
 
 
@@ -356,6 +358,7 @@ user.put("Image","http://108.60.209.155:8080/AndroidFileUpload/uploads/" + fileN
         user.put("code",code);
         user.put("verified","NO");
         user.put("homezoned","NO");
+        user.put("codesent","NO"); //When app sends the code, change this to yes
 
         user.signUpInBackground(new SignUpCallback() {
             @Override
@@ -366,6 +369,14 @@ user.put("Image","http://108.60.209.155:8080/AndroidFileUpload/uploads/" + fileN
                     progressView.stopAnimation();
                     progressView.setVisibility(View.INVISIBLE);
                     getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                    ParseObject saveSender = new ParseObject("SentCodes");
+                    saveSender.put("user", ParseUser.getCurrentUser().getUsername());
+                    saveSender.put("code",code);
+                    saveSender.put("codesent","NO");
+                    saveSender.put("phone",txtPhone.getText().toString());
+                    saveSender.put("email",email.getText().toString());
+                   // saveSender.put("mailsent","NO"); Mail only sent as a resend
+                    saveSender.saveInBackground();
                     showSuccessDialog();
                 } else {
                     // Sign up didn't succeed. Look at the ParseException
@@ -476,7 +487,7 @@ user.put("Image","http://108.60.209.155:8080/AndroidFileUpload/uploads/" + fileN
             imgProfile.setImageBitmap(myBitmap);
             //this sets things up for upload by ASYNC Task
             try {
-                FilePath = compressForSaveImage(mImagePath, 1);
+                FilePath = compressForSaveImage(mImagePath, 2);
                 File mainFile = new File(FilePath);
                 fileName = mainFile.getName().toString();
                 // File mainFile = new File(FilePath);
@@ -653,7 +664,7 @@ user.put("Image","http://108.60.209.155:8080/AndroidFileUpload/uploads/" + fileN
        inputName.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
         if (inputName.getText().toString().trim().isEmpty()) {
             inputLayoutName.setError(getString(R.string.err_msg_name));
-            inputName.setCompoundDrawablesWithIntrinsicBounds(0, 0,R.drawable.cancelbutton , 0);
+//            inputName.setCompoundDrawablesWithIntrinsicBounds(0, 0,R.drawable.cancelbutton , 0);
             requestFocus(inputName);
             return false;
         } else {

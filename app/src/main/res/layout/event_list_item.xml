@@ -50,19 +50,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <LinearLayout
+        android:id="@+id/layoutdown"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+android:visibility="gone"
+        android:layout_below="@id/txtlastgist"
+        android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/txtNew"
-        android:text="NEW"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="7dp"
+        android:text="0"
+         android:layout_marginTop="7dp"
         android:textStyle="bold"
         android:visibility="visible"
-        android:paddingLeft="10dp"
-        android:layout_marginRight="5dp"
-        android:layout_below="@id/txtlastgist"
-        android:textColor="@color/red"
+
+        android:textColor="@color/very_dark_gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/comenta"
+        android:layout_below="@id/txtlastgist"
+
+        android:layout_toRightOf="@id/txtNew"
+        android:layout_alignTop="@id/txtNew"
+        android:src="@drawable/commenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ImageView>
+
+    </LinearLayout>
 
     <ImageView android:layout_width="wrap_content"
         android:layout_height="wrap_content"

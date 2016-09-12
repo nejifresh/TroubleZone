@@ -21,110 +21,150 @@
 
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-
-            android:background="@drawable/google_cards_background_top" >
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="20dp" />
 
 
-            <LinearLayout
+
+
+
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/video_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:background="#000"
+            >
+            <ImageView
+                android:id="@+id/list_item_google_cards_social_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+android:visibility="visible"
+                android:src="@drawable/siren"
+                android:scaleType="centerCrop" />
+
+            <com.github.rtoshiro.view.video.FullscreenVideoLayout
+                android:id="@+id/video_view"
+                android:visibility="gone"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <VideoView
+                android:id="@+id/videoview"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/play_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="4dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical" >
+                android:visibility="visible"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:src="@drawable/playbutton"
+                />
 
-                <com.devspark.robototextview.widget.RobotoTextView
-                    android:id="@+id/list_item_google_cards_social_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="6dp"
-                    android:text="\@John Doe"
-                    android:textColor="@color/main_color_grey_600"
-                    android:textSize="16sp"
-                    app:typeface="roboto_light" />
 
-                <com.devspark.robototextview.widget.RobotoTextView
-                    android:id="@+id/list_item_google_cards_social_place"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="from Oklahoma"
-                    android:textColor="@color/black_semi_transparent"
-                    android:textSize="12sp"
-                    app:typeface="roboto_light" />
 
-                <com.devspark.robototextview.widget.RobotoTextView
-                    android:id="@+id/list_item_google_cards_social_in"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="In Calabar, Cross River"
-                    android:textColor="@color/main_color_grey_400"
-                    android:textSize="12sp"
-                    app:typeface="roboto_light" />
-            </LinearLayout>
+        </FrameLayout>
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/list_item_google_cards_social_image"
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+
+
+
+
+      <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_toRightOf="@id/profile_image"
+    android:layout_toEndOf="@id/profile_image"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:id="@+id/list_item_google_cards_social_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\@John Doe"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/main_color_grey_600"
+        android:textSize="16sp"
+        app:typeface="roboto_light"
+        />
+
+          <com.devspark.robototextview.widget.RobotoTextView
+              android:id="@+id/list_item_google_cards_social_place"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="from Oklahoma"
+              android:textColor="@color/black_semi_transparent"
+              android:textSize="12sp"
+              app:typeface="roboto_light"
+              android:layout_alignBottom="@+id/list_item_google_cards_social_name"
+              android:layout_toLeftOf="@+id/list_item_google_cards_social_in"
+              android:layout_toStartOf="@+id/list_item_google_cards_social_in" />
+
+          <com.devspark.robototextview.widget.RobotoTextView
+              android:id="@+id/list_item_google_cards_social_in"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="In Calabar, Cross River"
+              android:textColor="@color/main_color_grey_400"
+              android:textSize="12sp"
+              app:typeface="roboto_light"
+              android:layout_alignBaseline="@+id/list_item_google_cards_social_text"
+              android:layout_alignBottom="@+id/list_item_google_cards_social_text"
+              android:layout_alignParentRight="true"
+              android:layout_alignParentEnd="true" />
+
+
+      </LinearLayout>
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/list_item_google_cards_social_text"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:layout_below="@id/profile_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:text="Incident description goes here"
+            android:textColor="@color/black_semi_transparent"
+            android:textSize="14sp"
+            app:typeface="roboto_regular"/>
 
-            android:scaleType="centerCrop" />
-
-         <RelativeLayout
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:src="@drawable/talkgrey"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:id="@+id/imguser"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp" />
-                <com.devspark.robototextview.widget.RobotoTextView
-                    android:id="@+id/list_item_google_cards_social_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_toRightOf="@id/imguser"
-                    android:layout_toEndOf="@id/imguser"
-                    android:layout_alignBaseline="@id/imguser"
-                    android:maxLines="2"
-                    android:ellipsize="end"
-                    android:text="Incident description goes here"
-                    android:textColor="@color/black_semi_transparent"
-                    android:textSize="14sp"
-                    app:typeface="roboto_medium" />
-            </RelativeLayout>
-
-
-
-
+    </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:background="@color/divider" />
 
-
-        <LinearLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right" >
@@ -136,6 +176,8 @@
                 android:layout_margin="8dp"
                 android:padding="8dp"
                 android:text="COMMENTS"
+                android:background="@color/transparent"
+                android:clickable="true"
                 android:textColor="@color/main_color_grey_400"
                 android:textSize="14sp"
                 app:typeface="roboto_medium" />
@@ -147,6 +189,8 @@
                 android:layout_margin="8dp"
                 android:padding="8dp"
                 android:text="SHARE"
+                android:background="@color/transparent"
+               android:clickable="true"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp"
                 app:typeface="roboto_medium" />

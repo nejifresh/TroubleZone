@@ -1,6 +1,9 @@
 package com.nejitawo.troublezone.Activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -15,10 +18,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.nejitawo.troublezone.Fragments.TabFragment;
 import com.nejitawo.troublezone.GlobalClass;
 import com.nejitawo.troublezone.R;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,6 +37,11 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawer;
     private NavigationView navigationView;
 
+    SharedPreferences sharedpreferences;
+    public static final String Verified = "verified";
+    public static final String MyPREFERENCES = "MyPrefs";
+private Tracker mTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +49,10 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(0xFFFFFFFF);
-
+        toolbar.setTitle("Troublezone");
+        GlobalClass application = (GlobalClass)  getApplication();
+        mTracker = application.getDefaultTracker();
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
 
 
@@ -106,10 +124,13 @@ public class MainActivity extends AppCompatActivity
                  startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + appName)));
              }
 
-        } else if (id == R.id.nav_share)
+        } else if (id == R.id.nav_settings)
+
 
          {
-             initShareIntent();
+            // initShareIntent();
+             Intent intent = new Intent(MainActivity.this,Settings.class);
+             startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -123,14 +144,20 @@ public class MainActivity extends AppCompatActivity
             //  InputStream inputStream = am.open("nairababe.jpg");
             //  File file = createFileFromInputStream(inputStream);
             // File filePath = getFileStreamPath(file);
+            final String appName = getPackageName();
+
             Intent shareIntent = new Intent();
             shareIntent.setAction(Intent.ACTION_SEND);
-            shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Get the Unjoo App!!");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Are you looking for a house to rent or property for sale? Self Contained, 2 -3 Bedroom Apartment etc? Find it on Unjoo. Download on Google Play: https://play.google.com/store/apps/details?id=com.nejitawo.unjoo");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Get the Troublezone App!!");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Hi dear, do you know there's now an app that tells you when there is danger and trouble around you? " + "\n" + "\n" +  "Don't be caught unaware!. Download the Troublezone App today on Google Play:" + "\n"+   "https://play.google.com/store/apps/details?id=" + appName);
             // shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));  //optional//use this when you want to send an image
             shareIntent.setType("text/plain");
             //shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            startActivity(Intent.createChooser(shareIntent, "Share via"));
+            startActivity(Intent.createChooser(shareIntent, "Invite via"));
+            mTracker.send(new HitBuilders.EventBuilder()
+                    .setCategory("Action")
+                    .setAction("App Invites")
+                    .build());
         } catch (Exception e){
             Log.e("Errorshare",e.getMessage());
         }
@@ -142,6 +169,7 @@ public class MainActivity extends AppCompatActivity
     protected void onStart(){
         super.onStart();
         ParseUser currentUser = ParseUser.getCurrentUser();
+
         if (currentUser == null){
             Intent intent = new Intent(this,SignUp.class);
             startActivity(intent);
@@ -149,13 +177,40 @@ public class MainActivity extends AppCompatActivity
 
         }else{
 
-            String verified = currentUser.getString("verified");
+            if (sharedpreferences.contains(Verified)){
+
+            } else{
+                Intent intent = new Intent(MainActivity.this,VerifyActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+          /*  ParseQuery<ParseUser> userParseQuery = ParseQuery.getUserQuery();
+            userParseQuery.findInBackground(new FindCallback<ParseUser>() {
+                @Override
+                public void done(List<ParseUser> objects, ParseException e) {
+                    if (e==null){
+                        for (ParseUser user: objects){
+
+                            String         verified =  user.getString("verified");
+                            if (verified == "NO"){
+                                //USER IS NOT VERIFIED
+                                Intent intent = new Intent(MainActivity.this,VerifyActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
+                    }
+                }
+            });*/
+
+           /* String verified = currentUser.getString("verified");
             if (verified == "NO"){
                 //USER IS NOT VERIFIED
                 Intent intent = new Intent(this,VerifyActivity.class);
                 startActivity(intent);
                 finish();
-            }
+            }*/
 
         }
     }
@@ -168,5 +223,6 @@ public class MainActivity extends AppCompatActivity
         super.onDestroy();
 
     }
+
 
 }

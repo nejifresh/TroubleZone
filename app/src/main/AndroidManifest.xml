@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nejitawo.troublezone" >
+    package="com.nejitawo.troublezone">
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -24,32 +24,55 @@
     <uses-permission android:name="ANDROID.PERMISSION.WAKE_LOCK" />
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
-        android:name="com.nejitawo.troublezone.GlobalClass"
+        android:name=".GlobalClass"
         android:allowBackup="true"
-        android:icon="@mipmap/unjoologo"
+        android:icon="@mipmap/troubleimage"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+        <receiver android:name=".Receivers.StartServiceReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+          <!--
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+          -->
+        </receiver>
+
         <activity
             android:name=".Activities.SplashActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name="com.nejitawo.troublezone.Imageutil.ImageCropActivity" />
-        <activity android:name=".Activities.SignUp" />
-        <activity android:name=".Activities.TermsActivity" />
+        <activity android:name=".Imageutil.ImageCropActivity" android:screenOrientation="portrait" />
+        <activity android:name=".Activities.SignUp" android:screenOrientation="portrait" />
+        <activity android:name=".Activities.TermsActivity"  android:screenOrientation="portrait"/>
         <activity
-            android:name=".Activities.HomezoneActivity"
+            android:name=".Activities.HomezoneActivity" android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.VerifyActivity"
+            android:name=".Activities.VerifyActivity" android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -67,24 +90,33 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".Activities.MainActivity" android:screenOrientation="portrait"
             android:label="@string/heading"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.TestActivity"
+            android:name=".Activities.TestActivity" android:screenOrientation="portrait"
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.nejitawo.troublezone.Capture.NewPicture"
+            android:name=".Capture.NewPicture" android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.FullScreenImage" />
 
         <service
-            android:name="com.nejitawo.troublezone.Services.LocationService"
+            android:name=".Services.LocationService"
             android:exported="false" />
+        <service android:name=".Services.AudioService" android:exported="false"/>
 
-        <activity android:name=".Activities.CommentsActivity" >
-        </activity>
+        <activity android:name=".Activities.CommentsActivity" android:screenOrientation="portrait"
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity
+            android:name=".Activities.MapActivity" android:screenOrientation="portrait"
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity android:name=".Activities.Settings" android:screenOrientation="portrait"
+            android:parentActivityName=".Activities.MainActivity"></activity>
+        <activity android:name=".Capture.VideoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Capture.UploadActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.FullScreenVideo" android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

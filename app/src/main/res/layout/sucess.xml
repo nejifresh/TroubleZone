@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+   android:padding="10dp"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnPrimary"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:text="My Main Home Zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnSecondary"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:text="My Second Home Zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnTetiary"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:text="My Third Home Zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnCurrent"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:text="My Current Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

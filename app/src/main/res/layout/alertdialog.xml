@@ -177,6 +177,60 @@ android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded"
         android:layout_marginTop="7dp"
+        android:id="@+id/rlKill"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender35"
+            android:src="@drawable/homi"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage35"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea35"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender35"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender35"
+            android:text="Murder Incident"
+            android:layout_toRightOf="@id/imgGender35"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea35"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender35"
+            android:layout_toRightOf="@id/imgGender35"
+            android:text="Select if there is a murder incident near you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
         android:layout_marginLeft="10dp"
         android:id="@+id/rlKidnap"
         android:layout_marginRight="10dp"
@@ -271,6 +325,63 @@ android:layout_marginTop="10dp"
             android:layout_toEndOf="@id/imgGender5"
             android:layout_toRightOf="@id/imgGender5"
             android:text="Select for medical emergency near you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:id="@+id/rlRiot"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender61"
+            android:src="@drawable/unrest"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage61"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea61"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender61"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender61"
+            android:text="Civil Unrest/Rioting"
+
+            android:layout_toRightOf="@id/imgGender61"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea61"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender61"
+            android:layout_toRightOf="@id/imgGender61"
+            android:text="Select if there is a protest or riots near you"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="#727272" />
 
@@ -381,6 +492,60 @@ android:layout_marginTop="10dp"
             android:layout_toEndOf="@id/imgGender7"
             android:layout_toRightOf="@id/imgGender7"
             android:text="Select for sexual harrassment around you"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#727272" />
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="7dp"
+        android:id="@+id/rlOthers"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:clickable="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgGender71"
+            android:src="@drawable/high"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/imgImage71"
+            android:src="@drawable/arrowboy"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/spArea71"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignBaseline="@id/imgGender71"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender71"
+            android:text="Other Incident"
+            android:layout_toRightOf="@id/imgGender71"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#212121" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spArea71"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toEndOf="@id/imgGender71"
+            android:layout_toRightOf="@id/imgGender71"
+            android:text="Select for other incidents near you"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="#727272" />
 

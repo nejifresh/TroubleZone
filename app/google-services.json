@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "55017801906",
+    "project_id": "crbcapp"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55017801906:android:c3f55dc8ab493bef",
+        "android_client_info": {
+          "package_name": "com.nejitawo.troublezone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARoszfMz5Vtv71Q7Mk4UDUVpVqcrmQWa0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-67421548-4"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
